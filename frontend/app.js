@@ -2,12 +2,13 @@ require('./styles/styles.css');
 
 import UI from './UI';
 
+// Cargar y renderear los libros al comenzar a cargar el DOM
 document.addEventListener('DOMContentLoaded', () =>{
     const ui = new UI();
     ui.renderBooks();
 })
 
-
+// Capturar el formulario y guardar los datos
 document.getElementById('book-form').addEventListener('submit', (e) =>{
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
@@ -32,6 +33,7 @@ document.getElementById('book-form').addEventListener('submit', (e) =>{
     e.preventDefault();
 });
 
+// Capturar elemento (X) de los libros para Eliminar el registro
 document.getElementById('books-cards').addEventListener('click', (e) =>{
         if(e.target.classList.contains('delete')){
             //console.log(e.target.getAttribute('_id'))
